@@ -39,12 +39,14 @@ function salvarDados(dados, res) {
             json = JSON.parse(data)
         }
     
-          json.push(dados)
+          json.push(dados) // envia os dados
 
-    fs.writeFile('dados.json', JSON.stringify(json, null, 2), (err) => {
+
+    fs.writeFile('dados.json', JSON.stringify(json, null, 2), (err) => { // atualiza os dados do json
         if (err) {
             return res.send('Erro ao salvar os dados')
         }
+
 
         res.redirect('/dados.html')
     })
@@ -52,12 +54,15 @@ function salvarDados(dados, res) {
 }
 
 
-app.get("dados", (req, res) =>{
+app.get("/dados", (req, res) =>{
   fs.readFile("dados.json", (err, res) =>{
     if (err) {
       return res.status(500).send('Erro ao carregar os dados')
     }
+    res.redirect("/dados.html")
   })
 })
 
-app.listen(5500);
+app.listen(5500, () => {
+  console.log('Servidor rodando ')
+});

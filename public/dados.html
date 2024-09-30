@@ -27,7 +27,7 @@
 <body>
     <h1>Dados recebidos</h1>
 
-    <table>
+    <table  id="dados-tabela" >
         <thead>
             <th>Nome</th>
             <th>Email</th>
@@ -35,12 +35,25 @@
         </thead>
     </table>
 
-    <tbody id="dados-tabela">
-         
+    <tbody>
+         <!-- onde os dados vão se armazenar -->
     </tbody>
 
     <script>
-        fetch('/dados')
+        fetch('/dados') //  faz uma requisição que consome os dados
+        .then(response => response.json())
+            .then(data => {
+                const tbody = document.getElementById('dados-tabela').querySelector('tbody')
+                    data.forEach(dado => {
+                        const tr = document.createElement('tr')
+                            tr.innerHTML = `<td>${dado.nome}</td><td>${dado.email}</td><td>${dado.telefone}</td>`
+                            tbody.appendChild(tr)
+                    })
+            })
+            .catch (error => {
+                console.error('Erro ao buscar dados: ', error)})
+
+
     </script>
 </body>
 </html>
