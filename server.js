@@ -13,11 +13,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.post("/form", (req, res) => {
     const dados = req.body
-  console.log(dados);
-  // res.send("Dados enviados");
+ 
 
   fs.access("dados.json", fs.constants.F_OK, (err) => {
     if (err) {
+
       fs.writeFile("dados.json", "[]", (err) => {
         if (err) {
           return res.send("Erro ao criar arquivo");
