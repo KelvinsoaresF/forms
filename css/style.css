@@ -1,14 +1,55 @@
 body {
-    background-image: url(/img/background.jpeg);
+    background-image: url(/img/Blade\ runner\ 2049.jpeg);
     background-size: cover;
     font-family: Arial, Helvetica, sans-serifs;
     height: 100vh;
     margin-top: 15%;
+    margin-left: 0px;
+    margin-right: 15px;
+}
+
+.menu {
+    display: grid;
+    position: fixed;    
+    justify-content: center;
+    top: 0;
+    width: 100%;
+    border: solid 2px white;
+    background-color: rgb(43, 2, 110);
+    margin: 0;
+    padding: 2px;
+}
+
+.menu ul {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+}
+
+.menu ul li {
+    text-align: center;
+}
+
+.menu ul li a {
+    color: rgb(202, 13, 244);
+    display: block;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    background-color: blue;
+    border-radius: 8px;
 }
 
 
+
+
+
+
+
 .inicio {
-    font-size: 45px;
+    font-size: 35px;
     text-align: center;
 }
 
@@ -37,12 +78,13 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: white;
+    background-color: rgb(156, 48, 175);
     border: solid 1px;
     padding: 25px;
     margin: 0 30%;
     border-radius: 18px;
     height: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
 }
 
 .btn-conteiner{
@@ -53,8 +95,11 @@ body {
 }
 
 .btn-conteiner:hover{
-    background-color: rgb(13, 222, 13);
+    background-color: rgb(255, 0, 225);
 }
+
+
+/* FOMRS */
 form {
     display: flex;
     flex-direction: column; 
@@ -80,5 +125,23 @@ input{
     font-size:30px;
     text-align: center;
     color: white;
-   
+    display: block;
+    justify-content: center;
 }
+
+/* DADOS */
+/* 
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+table, th, td{
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+} */

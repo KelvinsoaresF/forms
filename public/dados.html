@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid rgb(255, 248, 248);
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dados recebidos</h1>
+
+    <table>
+        <thead>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+        </thead>
+    </table>
+
+    <tbody id="dados-tabela">
+         
+    </tbody>
+
+    <script>
+        fetch('/dados')
+    </script>
+</body>
+</html>
